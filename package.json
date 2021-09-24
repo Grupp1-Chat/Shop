@@ -4,13 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-encrypter": "^1.0.1",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "jquery": "^3.6.0",
     "moment": "^2.29.1",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-icon": "^2.3.3",
     "stripe": "^8.176.0"
   }
 }

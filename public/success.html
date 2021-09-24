@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/modules/semantic/css" />
+    <script>
+      fetch("/success-checkout-session")
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          window.sessionStorage.clear();
+        });
+    </script>
+    <title>Stripe Cart</title>
+  </head>
+  <body>
+    <br />
+    <div class="ui container">
+      <h1>Thank you for your patronage! :)</h1>
+      <p>Your item has been delivered to your email. Check it out!</p>
+      <a href="/cart.html">
+        <button class="ui teal labeled icon button">
+          <i class="cart icon"></i>
+          Back to cart
+        </button>
+      </a>
+    </div>
+
+    <script src="./login.js"></script>
+    <script src="/modules/jquery"></script>
+    <script src="/modules/semantic/js"></script>
+  </body>
+</html>

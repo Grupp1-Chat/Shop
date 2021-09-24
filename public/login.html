@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/modules/semantic/css" />
+    <title>Stripe Cart</title>
+  </head>
+  <body>
+    <br />
+    <div
+      class="container"
+      style="display: flex; align-items: center; justify-content: center"
+    >
+      <div class="ui purple inverted segment" style="width: 500px">
+        <div class="ui inverted form" id="login-form">
+          <div class="field">
+            <label>E-mail</label>
+            <input id="login-email" type="email" placeholder="joe@schmoe.com" />
+          </div>
+          <div class="field">
+            <label>Password</label>
+            <input id="login-password" type="password" />
+          </div>
+          <div class="ui error message">
+            <div class="header">Action Forbidden</div>
+            <p>
+              You can only sign up for an account once with a given e-mail
+              address.
+            </p>
+          </div>
+          <div class="ui warning message">
+            <div class="header">Could you check something!</div>
+            <ul class="list">
+              <li>Email should be valid.</li>
+              <li>Password should be at least 4 characters.</li>
+            </ul>
+          </div>
+          <div class="ui submit button primary" id="login-login-btn">Login</div>
+          <div class="ui submit button" id="login-signup-btn">Signup</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./login.js"></script>
+    <script src="/modules/jquery"></script>
+    <script src="/modules/semantic/js"></script>
+  </body>
+</html>

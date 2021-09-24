@@ -1,12 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/modules/semantic/css" />
+    <title>Stripe Cart</title>
+    <script>
+      // fetch("/retrieve-checkout-session")
+      //   .then((response) => response.json())
+      //   .then((data) => {
+      //     window.location = data.url;
+      //   })
+      //   .catch((ex) => console.error(ex));
+    </script>
+  </head>
+  <body>
+    <div class="ui segment" id="load">
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <div class="ui active inverted dimmer">
+        <div class="ui text loader">Loading</div>
+      </div>
+      <p></p>
+    </div>
+    <div id="main">
+      <div class="ui purple three item menu">
+        <a class="item active"><i class="credit card icon"></i>Shop</a>
+        <a href="cart.html" class="item"
+          ><i class="dollar sign icon"></i>Cart</a
+        >
+        <a class="item" id="auth-btn"><i class="power off icon"></i>Logout</a>
+      </div>
+      <div class="ui grid">
+        <div class="sixteen wide column center aligned">
+          <h2 class="ui icon header">
+            <i class="purple credit card icon"></i>
+            <div class="content">
+              S t r i p e C a r t
+              <div class="sub header">
+                Free yourself from swiping when shopping.
+              </div>
+            </div>
+          </h2>
+        </div>
+      </div>
+      <div class="ui container">
+        <div class="ui four cards">
+          <div class="card" style="visibility: hidden"></div>
+          <div class="card">
+            <div class="image">
+              <img src="./nyancat.jpg" id="product-img1" />
+            </div>
+            <div class="content">
+              <div class="header" id="product-name1">Savage Nyan Cat</div>
+              <div class="description" id="product-desc1">
+                A fake nyan cat product.
+              </div>
+            </div>
+            <div class="extra ui center aligned">
+              <button class="ui teal labeled icon button" id="product-btn1">
+                <i class="cart icon"></i>
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="image">
+              <img src="./turtle.jpg" id="product-img2" />
+            </div>
+            <div class="content">
+              <div class="header" id="product-name2">Surprised turtle</div>
+              <div class="description" id="product-desc2">
+                A fake cute image art product.
+              </div>
+            </div>
+            <div class="extra ui center aligned">
+              <button class="ui teal labeled icon button" id="product-btn2">
+                <i class="cart icon"></i>
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <script src="/modules/jquery"></script>
+    <script src="/modules/semantic/js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".rating").rating();
+      });
+    </script>
+    <script src="./index.js"></script>
+  </body>
 </html>
