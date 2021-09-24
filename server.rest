@@ -1,0 +1,15 @@
+POST http://localhost:3000/users
+content-Type: application/json
+
+{"name": "fredrik", "password": "olle"}
+###
+POST http://localhost:3000/users
+content-type: application/json
+
+{"name":"Fredrik","password":"123"}
+
+###
+POST http://localhost:3000/login
+content-type: application/json
+
+{"name":"Fredrik","password":"123"}
