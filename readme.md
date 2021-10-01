@@ -1,4 +1,4 @@
-# Shoppie, a small webshop made with js, node/express and Stripe
+# Shoppie, a small webshop made with js, node/express and Stripe!
 
 ## Github repo:
 https://github.com/Grupp1-Chat/Shop
