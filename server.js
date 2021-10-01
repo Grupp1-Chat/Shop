@@ -82,7 +82,7 @@ app.post("/api/signup", async (req, res) => {
   const customer = await stripe.customers.create({
     email: req.body.email,
   });
-  // console.log(customer); // save customer with customer.id
+// save customer with customer.id
   bcrypt.hash(req.body.password, saltRounds, (err, hash) => {
     if (err) return console.error(err);
     const data = { id: customer.id, email: req.body.email, password: hash };
@@ -94,9 +94,9 @@ app.post("/api/signup", async (req, res) => {
 
 app.post("/api/login", (req, res) => {
   const user = req.body;
-  console.log(user);
+  
   const USERS = DB.getUsers();
-  console.log(USERS);
+  
   const index = USERS.findIndex((item) => item.email === user.email);
   if (index === -1) return res.status(404).end();
   bcrypt.compare(user.password, USERS[index].password, (err, r) => {
@@ -189,7 +189,7 @@ app.get("/cancel-checkout-session", (req, res) => {
   const user = req.signedCookies["x-auth"];
   user.session = "";
   const update = DB.updateUser(user);
-  console.log(update);
+  
   res.cookie("x-auth", update, cookieParams);
   res.end();
 });
@@ -221,6 +221,7 @@ app.get("/success-checkout-session", async (req, res) => {
     session.payment_intent
   );
   const purchase = {
+    date: new Date().toLocaleString("se-SE"),
     customer_id: user.id,
     customer_email: session.customer_details.email,
     session_id: session.id,
@@ -229,10 +230,16 @@ app.get("/success-checkout-session", async (req, res) => {
     card: paymentIntent.charges.data[0].payment_method_details.card.last4,
     items: lineItems,
   };
-  console.log(purchase);
   DB.addPurchase(purchase);
   res.send(purchase);
 });
+
+app.get("/orders", async (req, res)=>{
+    const user = res.cookie("x-auth")
+    res.send("i orders")
+    
+    
+})
 
 const PORT = 3000;
 app.listen(PORT, () => console.log(`Listening to port ${PORT}...`));
