@@ -52,7 +52,7 @@ loginBtn.onclick = () => {
       body: JSON.stringify(STATE),
     })
       .then((response) => {
-        console.log(response);
+        
         if (response.status === 200) {
           return response.json();
         } else {
@@ -73,20 +73,10 @@ loginBtn.onclick = () => {
 
 email.onkeyup = (e) => {
   STATE.email = email.value;
-  //   document
-  //     .getElementById("login-form")
-  //     .classList.remove(
-  //       document.getElementById("login-form").className.split(" ").pop()
-  //     );
 };
 
 password.onkeyup = (e) => {
   STATE.password = password.value;
-  //   document
-  //     .getElementById("login-form")
-  //     .classList.remove(
-  //       document.getElementById("login-form").className.split(" ").pop()
-  //     );
 };
 
 function validateEmail(email) {

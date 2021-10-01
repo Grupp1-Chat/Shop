@@ -21,15 +21,13 @@ const isLoggedIn = async () => {
     let response =  await fetch("/cookie/get")
     let cookie =  response.json()
     return cookie
-    console.log(cookie)
+    
 }
 
 
 
 const getOrders =  async () => {
-
     const auth = await isLoggedIn()
-    console.log("i get orders" + auth)
     if(Object.keys(auth).length>0){
     fetch("/api/purchases")
     .then((res) => res.json())
