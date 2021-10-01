@@ -12,7 +12,7 @@ fetch("/cookie/get")
 
 const STATE = JSON.parse(window.sessionStorage.getItem("cart"));
 let purchases = [];
-fetch("/api/purchases")
+/* fetch("/api/purchases")
   .then((res) => res.json())
   .then((data) => {
     purchases = data;
@@ -22,7 +22,7 @@ fetch("/api/purchases")
   .catch((ex) => {
     console.error(ex);
     alert("Something went wrong...");
-  });
+  }); */
 
 const emptyContainer = document.getElementById("empty-container");
 const itemContainer = document.getElementById("item-container");
@@ -69,7 +69,7 @@ function update(e) {
   render();
 }
 
-function renderPurchases() {
+/* function renderPurchases() {
   feedContainer.innerHTML = "";
   purchases.forEach((p) => {
     feedContainer.innerHTML += `
@@ -94,7 +94,7 @@ function renderPurchases() {
       </div>
         `;
   });
-}
+} */
 
 function render() {
   itemList.innerHTML = "";

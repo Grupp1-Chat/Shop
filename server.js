@@ -221,6 +221,7 @@ app.get("/success-checkout-session", async (req, res) => {
     session.payment_intent
   );
   const purchase = {
+    date: new Date().toLocaleString("se-SE"),
     customer_id: user.id,
     customer_email: session.customer_details.email,
     session_id: session.id,
@@ -233,6 +234,13 @@ app.get("/success-checkout-session", async (req, res) => {
   DB.addPurchase(purchase);
   res.send(purchase);
 });
+
+app.get("/orders", async (req, res)=>{
+    const user = res.cookie("x-auth")
+    res.send("i orders")
+    console.log("user i orders: " + user)
+    
+})
 
 const PORT = 3000;
 app.listen(PORT, () => console.log(`Listening to port ${PORT}...`));
